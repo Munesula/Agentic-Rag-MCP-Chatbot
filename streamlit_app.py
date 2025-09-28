@@ -16,7 +16,7 @@ def initialize_agents():
 
 # --- Streamlit UI Setup ---
 st.set_page_config(page_title="Agentic RAG Chatbot (MCP)", layout="wide")
-st.title("🤖 Agentic RAG Chatbot for Multi-Format QA")
+st.title("Agentic RAG Chatbot for Multi-Format QA")
 st.caption("Architecture: 3 Agents using Model Context Protocol (MCP)")
 
 # Initialize state and agents
@@ -93,7 +93,7 @@ else:
             st.markdown(message["content"])
             if message["role"] == "assistant" and "sources" in message:
                 # Renders the sources for all *past* messages
-                with st.expander("📚 Sources Used (Required Detail)"):
+                with st.expander(" Sources Used (Required Detail)"):
                     # FINAL FIX: Uses robust Markdown for display
                     if message["sources"]:
                         st.markdown("\n".join([f"- **{s}**" for s in message["sources"]]))
@@ -137,7 +137,7 @@ else:
                     st.markdown(answer)
                     
                     # Display the sources directly below the answer
-                    with st.expander("📚 Sources Used (Required Detail)"):
+                    with st.expander(" Sources Used (Required Detail)"):
                         if sources:
                             st.markdown("\n".join([f"- **{s}**" for s in sources]))
                         else:
@@ -149,4 +149,5 @@ else:
                 except Exception as e:
                     error_message = f"An error occurred during query: {e}. Check if the Ollama server is running."
                     st.error(error_message)
+
                     st.session_state.messages.append({"role": "assistant", "content": f"Sorry, I encountered an internal error. Details: {error_message}"})
