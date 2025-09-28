@@ -1,7 +1,5 @@
-# Agentic-Rag-MCP-Chatbot
-
-Agentic RAG Chatbot for Multi-Format QA
-Project Overview
+🤖 Agentic RAG Chatbot for Multi-Format QA
+🚀 Project Overview
 This repository contains the complete solution for building a production-ready Agentic Retrieval-Augmented Generation (RAG) Chatbot. The system is designed to answer complex user queries based on private, uploaded documents of various formats (PDF, DOCX, CSV, etc.).
 
 The architecture strictly adheres to a modular, three-agent structure, communicating via the Model Context Protocol (MCP), demonstrating a commitment to scalable, decoupled design.
